@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+
+    <context:annotation-config></context:annotation-config>
+
+    <!---while creating Human class object any dependency present Human class then use autowire="byName" to inject
+ those respective dependencies.Heart reference variable(heart) name and bean id name(heart) need to match for
+ autowiring criteria.
+ another Approach=while creating Human class object any dependency present Human class then use autowire="byType"
+ to inject those respective dependencies.Heart reference variable type(class type) and
+ bean id name(Class type, because Heart is class) need to match for autowiring criteria.
+    <bean id="human" class="com.example.autowired.Human" autowire="byName">!-->
+
+    <bean id="heartValueObject" class="com.example.autowired.Heart">
+        <property name="noOfHearts" value="3"></property>
+        <property name="NameofPerson" value="mark"></property>
+    </bean>
+    <bean id="heartValueObject1" class="com.example.autowired.Heart">
+        <property name="noOfHearts" value="6"></property>
+        <property name="NameofPerson" value="marks"></property>
+    </bean>
+    <bean id="heartValueObject2" class="com.example.autowired.Heart">
+        <property name="noOfHearts" value="6"></property>
+        <property name="NameofPerson" value="marks"></property>
+    </bean>
+    <bean id="human" class="com.example.autowired.Human">
+        <property name="num" value="12"></property>
+    </bean>
+</beans>
